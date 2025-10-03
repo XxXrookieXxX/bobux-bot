@@ -9,7 +9,7 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def main():
     import os
-    TOKEN = os.environ.get('TELEGRAM_TOKEN')  # токен берём из переменной окружения
+    TOKEN = os.getenv('TELEGRAM_TOKEN')  # токен берём из переменной окружения
 
     application = ApplicationBuilder().token(TOKEN).build()
 
