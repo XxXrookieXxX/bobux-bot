@@ -7,15 +7,15 @@ def get_usd_rate():
     response = requests.get(url).json()
     return response["Valute"]["USD"]["Value"]
 
-def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    update.message.reply_text('Привет! Я в облаке и готов помочь!')
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('Привет! Я в облаке и готов помочь!')
 
-def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    update.message.reply_text(f'Вы сказали: {update.message.text}')
+async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(f'Вы сказали: {update.message.text}')
 
-def usd(update, context):
+async def usd(update, context):
     rate = get_usd_rate()
-    update.message.reply_text(f"💵 По данным Центробанка РФ, курс доллара: {rate:.2f} руб.")
+    await update.message.reply_text(f"💵 По данным Центробанка РФ, курс доллара: {rate:.2f} руб.")
 
 def main():
     import os
