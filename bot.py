@@ -13,9 +13,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(f'Вы сказали: {update.message.text}')
 
-async def usd_command(message: types.Message):
+def usd(update, context):
     rate = get_usd_rate()
-    await message.answer(f"💵 По данным Центробанка РФ, курс доллара: {rate:.2f} руб.")
+    await update.message.reply_text(f"💵 По данным Центробанка РФ, курс доллара: {rate:.2f} руб.")
 
 def main():
     import os
@@ -24,6 +24,7 @@ def main():
     application = ApplicationBuilder().token(TOKEN).build()
 
     application.add_handler(CommandHandler('start', start))
+    application.add_handler(CommandHandler('usd',usd))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
 
     application.run_polling()
