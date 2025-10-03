@@ -1,1 +1,1 @@
-worker: python bobux$bot.py
+worker: python bobuxbot.py
