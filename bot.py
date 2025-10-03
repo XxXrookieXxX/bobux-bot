@@ -9,7 +9,7 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def main():
     import os
-    TOKEN = os.environ.get('8420264615:AAE9JtYlJIEArImZSa4-hdxdpzsGvCkegbU')  # токен берём из переменной окружения
+    TOKEN = '8420264615:AAE9JtYlJIEArImZSa4-hdxdpzsGvCkegbU'  # токен берём из переменной окружения
 
     application = ApplicationBuilder().token(TOKEN).build()
 
