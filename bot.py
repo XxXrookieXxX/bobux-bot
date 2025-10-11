@@ -39,7 +39,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup = InlineKeyboardMarkup(keyboard)
 
             await update.message.reply_text(
-                f"Теперь вам необходимо создать геймпасс на сумму: {result} робуксов и написать pass id!",
+                f"Теперь вам необходимо создать геймпасс на сумму: {result} робуксов и написать pass id!\n\nВАЖНО: Цена должна быть именно такой, так как роблокс берет комиссию 30% с покупки геймпасса!\n\nПо всем вопросам обращаться напрямую к продавцу!",
                 reply_markup=reply_markup,
             )
 
