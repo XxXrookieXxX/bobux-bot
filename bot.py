@@ -8,7 +8,7 @@ def get_usd_rate():
     return response["Valute"]["USD"]["Value"]
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text('Привет! Я в облаке и готов помочь!')
+    await update.message.reply_text('Привет покупатель👋!\n\nДля взаимодействия с ботом используйте следующие команды:\n/start — Начать диалог\n/usd — Курс доллара')
 
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(f'Вы сказали: {update.message.text}')
