@@ -50,7 +50,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text("❌ Введи корректное число (например: 100)")
     elif context.user_data.get("waiting_for_pass_id"):
         try:
-            await update.message.reply_text("Вот ссылка на ваш геймпасс: https://www.roblox.com/game-pass/{text}")
+            await update.message.reply_text(f'Вот ссылка на ваш геймпасс: https://www.roblox.com/game-pass/{text}')
         except ValueError:
             await update.message.reply_text("❌ Введите корректный pass id!")
     else:
