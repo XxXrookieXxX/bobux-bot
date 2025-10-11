@@ -55,7 +55,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             else:
                 await update.message.reply_text('❌ Введите корректный pass id: без сторонних букв и символов, просто число!')
         except ValueError:
-            await update.message.reply_text("❌ Введите корректный pass id!")
+            await update.message.reply_text("❌ Введите корректный pass id без каких-либо других букв и символов!")
     else:
         await update.message.reply_text("Напиши /start, чтобы начать 😊")
 
